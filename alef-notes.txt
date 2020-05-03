@@ -1,0 +1,1 @@
+- start node.js command prompt and run c:\react>npx create-react-app alef-client
