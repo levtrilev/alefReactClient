@@ -1,4 +1,23 @@
-.App {
+.app-wrapper {
+	display: grid;
+	margin: 0 auto;
+	width: 1200px;
+	grid-template-areas: 
+	"h h"
+	"n c"
+	"s c";
+
+	grid-template-rows: 100px 2fr 1 fr;
+	grid-template-columns: 2fr 10fr;
+	/* grid-gap: 10px; */
+}
+
+.app-wrapper-content {
+	grid-area: c;
+	background-color: rgb(227, 205, 248);
+}
+
+/*.App {
   text-align: center;
 }
 
@@ -36,3 +55,4 @@
     transform: rotate(360deg);
   }
 }
+*/

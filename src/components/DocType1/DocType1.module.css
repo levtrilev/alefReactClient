@@ -1,0 +1,28 @@
+.doc_wrapper {
+	display: grid;
+	padding: 20px;
+	width: 1000px;
+	grid-template-areas: 
+	"list_head"
+	"doc_list"
+	"doc_new";
+
+	grid-template-rows: 30px 1fr 70px;
+}
+
+.list_header {
+	grid-area: list_head;
+	background-color: rgb(227, 205, 248);
+}
+
+.document_list {
+	grid-area: doc_list;
+}
+
+.col {
+	width: 150;
+}
+
+.document_new {
+	grid-area: doc_new;
+}

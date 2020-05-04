@@ -1,1 +1,3 @@
-- start node.js command prompt and run c:\react>npx create-react-app alef-client
+- to create new project in chosen dir start node.js command prompt cd to the dir and run "c:\react>npx create-react-app alef-client" where dir=alef-client
+- to start app from terminal run npm start
+- to install react-redux from terminal run "npm install react-redux --save"

@@ -12,8 +12,11 @@ const Folders = () => {
 		<div className={`${s.item} ${s.activeLink}`}>
 			<NavLink to='/dialogs' activeClassName={s.activeLink}>Dialogs</NavLink>
 		</div>
+		<div className={`${s.item} ${s.activeLink}`}>
+			<NavLink to='/users' activeClassName={s.activeLink}>Users</NavLink>
+		</div>
 		<div className={s.item}>
-			<NavLink to='/news' activeClassName={s.activeLink}>News</NavLink>
+			<NavLink to='/doctype1' activeClassName={s.activeLink}>DocType1</NavLink>
 		</div>
 		<div className={s.item}>
 			<a>Music</a>
