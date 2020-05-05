@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './DocType1.module.css';
 
-class DocType1 extends React.Component {
+const DocType1 = (props) => {
 
-	Document = (d_props) => {
+	const Document = (d_props) => {
 		return (
 			<div>
 				<span>
@@ -17,19 +17,19 @@ class DocType1 extends React.Component {
 				</span>
 			</div>
 		)
-	};
-	onSaveDocument = () => {
-		this.props.saveDocument();
-	};
-	onDocumentTextChange = (e) => {
-		let text = e.target.value;
-		this.props.updateNewDocument(text);
-	};
-	render() {
-		let documentsElements = this.props.state.type1Documents
-		.map(d => <this.Document text={d.text} code={"dt1-" + d.id} id={d.id} />);
+	}
 
-		return (
+	let documentsElements = props.state.type1Documents
+		.map(d => <Document text={d.text} code={"dt1-" + d.id} id={d.id} />);
+
+	let onSaveDocument = () => {
+		props.saveDocument();
+	};
+	let onDocumentTextChange = (e) => {
+		let text = e.target.value;
+		props.updateNewDocument(text);
+	};
+	return (
 		<div className={s.doc_wrapper}>
 			<div className={s.list_header}>
 				<span className={s.col}>
@@ -47,17 +47,16 @@ class DocType1 extends React.Component {
 			</div>
 			<div className={s.document_new}>
 				<textarea
-					onChange={this.onDocumentTextChange}
-					value={this.props.state.newDocumentText}
+					onChange={onDocumentTextChange}
+					value={props.state.newDocumentText}
 					placeholder='введите документ и нажмите кнопку отправить'
 				/>
 				<div>
-					<button onClick={this.onSaveDocument}>Save document</button>
+					<button onClick={onSaveDocument}>Save document</button>
 				</div>
 			</div>
 		</div>
 	);
-	}
 }
 
 export default DocType1;
