@@ -1,18 +1,20 @@
 import React from 'react';
 import s from './Profile.module.css';
 import Profile from './Profile';
+import { profileAPI } from '../../api/api';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-import { setProfileActionCreator } from '../../redux/profile-reducer';
+import { getProfile, setProfileActionCreator } from '../../redux/profile-reducer';
 
 class ProfileContainer extends React.Component {
 	componentDidMount() {
 		let userId = this.props.match.params.userId;
-		let profile = { userId: userId, key: userId, 
-			text: "text to get from API", 
-			likes: "likes to get from API" };
-		this.props.getProfile(profile);
+		this.props.getProfile(userId);
+		//let profile = { userId: userId, key: userId, 
+		//	text: "text to get from API", 
+		//	likes: "likes to get from API" };
+		//this.props.getProfile(profile);
 	}
 	render() {
 		debugger;
@@ -29,16 +31,16 @@ let mapStateToProps = (state) => {
 	return { profile: state.profilePage.profile }
 }
 
-let mapDispatchToProps = (dispatch) => {
+/* let mapDispatchToProps = (dispatch) => {
 	return {
 		getProfile: (userId) => {dispatch(setProfileActionCreator(userId))},
 	}	
 }
-
+ */
 //export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProfileContainer));
 export default compose (
 	withRouter,
-	connect(mapStateToProps, mapDispatchToProps)
+	connect(mapStateToProps, {getProfile})
 )
 (ProfileContainer);
 

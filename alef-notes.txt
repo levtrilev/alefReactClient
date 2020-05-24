@@ -3,6 +3,7 @@
 - to start app from terminal run "npm start"
 - to install react-redux from terminal run "npm install react-redux --save"
 - to install REST-API lib run "npm install axios --save"
+
 === redux-thunk =========
 - to install redux-thunk run "npm install redux-thunk --save"
 - to implement in code use in redux-store.js:
@@ -11,6 +12,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 ...
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));
 === endOf redux-thunk ===
+
 ==== withRouter =========
 import { withRouter } from 'react-router-dom';
 ...
