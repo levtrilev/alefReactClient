@@ -1,4 +1,41 @@
 - to create new project in chosen dir start node.js command prompt cd to the dir and run "c:\react>npx create-react-app alef-client" where dir=alef-client
-- to start app from terminal run npm start
+( - should try "npx nano-react-app my-app" )
+- to start app from terminal run "npm start"
 - to install react-redux from terminal run "npm install react-redux --save"
 - to install REST-API lib run "npm install axios --save"
+=== redux-thunk =========
+- to install redux-thunk run "npm install redux-thunk --save"
+- to implement in code use in redux-store.js:
+import thunkMiddleware from "redux-thunk";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+...
+let store = createStore(reducers, applyMiddleware(thunkMiddleware));
+=== endOf redux-thunk ===
+==== withRouter =========
+import { withRouter } from 'react-router-dom';
+...
+export default compose (
+	withRouter,
+	connect(mapStateToProps, {actionCreators, thunks..})
+)
+(targetComponent);
+- to use route info in targetComponent:
+class targetComponent extends React.Component {
+
+	componentDidMount() {
+		let someId = this.props.match.params.someId;
+		this.props.getSome(someId);
+	}
+	render() {...
+==== endOf withRouter ===
+
+
+
+
+(to compare redux-form vs fopmix (formic?))
+
+
+
+Полное руководство по useEffect
+Автор оригинала: Dan Abramov
+https://habr.com/ru/company/ruvds/blog/445276/
